@@ -252,6 +252,13 @@ int main(int argc, char **argv)
 
 	_SL_ = oneline ? "\\" : "\n" ;
 
+        // BEGIN MOTO IKSWM-11332 block SIGPIPE
+        sigset_t sset;
+        sigemptyset(&sset);
+        sigaddset(&sset, SIGPIPE);
+        sigprocmask(SIG_SETMASK, &sset, NULL);
+        // END MOTO IKSWM-11332
+
 #ifndef ANDROID
 	if (batch_file)
 		return batch(batch_file);
