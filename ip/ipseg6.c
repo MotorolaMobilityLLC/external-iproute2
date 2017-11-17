@@ -213,7 +213,9 @@ int do_seg6(int argc, char **argv)
 				invarg("hmac ALGO value is invalid", *argv);
 			}
 			opts.cmd = SEG6_CMD_SETHMAC;
+#ifndef __BIONIC__
 			opts.pass = getpass(HMAC_KEY_PROMPT);
+#endif
 		} else {
 			invarg("unknown", *argv);
 		}
