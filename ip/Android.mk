@@ -8,7 +8,8 @@ LOCAL_SRC_FILES := ip.c ipaddress.c ipaddrlabel.c iproute.c iprule.c ipnetns.c \
         iplink_vlan.c link_veth.c link_gre.c iplink_can.c \
         iplink_macvlan.c ipl2tp.c \
         ipfou.c iptoken.c tcp_metrics.c ipnetconf.c \
-        iproute_lwtunnel.c
+        iproute_lwtunnel.c iplink_xdp.c iplink_vrf.c iplink_xstats.c \
+        ipila.c ipmacsec.c ipseg6.c ipvrf.c
 
 LOCAL_MODULE := ip
 
@@ -24,6 +25,7 @@ LOCAL_CFLAGS := \
     -O2 -g \
     -W -Wall \
     -Wno-implicit-function-declaration \
+    -Wno-int-conversion \
     -Wno-missing-field-initializers \
     -Wno-pointer-arith \
     -Wno-sign-compare \
