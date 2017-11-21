@@ -19,7 +19,7 @@ LOCAL_SHARED_LIBRARIES := libc libm libdl
 
 LOCAL_SHARED_LIBRARIES += libiprouteutil libnetlink
 
-LOCAL_C_INCLUDES := $(LOCAL_PATH)/../include
+LOCAL_C_INCLUDES := $(LOCAL_PATH)/../include $(UAPI_INCLUDES)
 
 LOCAL_CFLAGS := \
     -O2 -g \

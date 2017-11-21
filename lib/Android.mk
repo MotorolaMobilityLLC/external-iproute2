@@ -7,7 +7,8 @@ LOCAL_SRC_FILES := \
     json_print.c json_writer.c
 LOCAL_MODULE := libiprouteutil
 LOCAL_SYSTEM_SHARED_LIBRARIES := libc
-LOCAL_C_INCLUDES := $(LOCAL_PATH)/../include
+
+LOCAL_C_INCLUDES := $(LOCAL_PATH)/../include $(UAPI_INCLUDES)
 LOCAL_CFLAGS := -O2 -g -W -Wall \
 	-DCONFDIR=\"/data/misc/net\" \
 	-DHAVE_UNISTD_H \
@@ -47,7 +48,8 @@ include $(CLEAR_VARS)
 LOCAL_SRC_FILES := ll_map.c libnetlink.c
 LOCAL_MODULE := libnetlink
 LOCAL_SYSTEM_SHARED_LIBRARIES := libc
-LOCAL_C_INCLUDES := $(LOCAL_PATH)/../include
+
+LOCAL_C_INCLUDES := $(LOCAL_PATH)/../include $(UAPI_INCLUDES)
 LOCAL_CFLAGS := -O2 -g -W -Wall \
 	-DHAVE_UNISTD_H \
 	-DHAVE_ERRNO_H \
