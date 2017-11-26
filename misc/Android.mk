@@ -10,7 +10,7 @@ LOCAL_MODULE_TAGS := debug
 
 LOCAL_SHARED_LIBRARIES += libiprouteutil libnetlink
 
-LOCAL_C_INCLUDES := $(LOCAL_PATH)/../include
+LOCAL_C_INCLUDES := $(LOCAL_PATH)/../include $(UAPI_INCLUDES)
 
 ##
 # "-x c" forces the lex/yacc files to be compiled as c the build system
