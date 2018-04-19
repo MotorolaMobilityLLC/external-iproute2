@@ -8,7 +8,7 @@ LOCAL_MODULE := ss
 
 LOCAL_MODULE_TAGS := debug
 
-LOCAL_SHARED_LIBRARIES += libiprouteutil libnetlink
+LOCAL_SHARED_LIBRARIES += libiprouteutil libnetlink libselinux
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../include $(UAPI_INCLUDES)
 
@@ -27,7 +27,8 @@ LOCAL_CFLAGS := \
     -Werror \
     '-Dsethostent(x)=' \
     $(yacc_flags) \
-    -DHAVE_SETNS
+    -DHAVE_SETNS \
+    -DHAVE_SELINUX
 
 LOCAL_CPPFLAGS := $(yacc_flags)
 
