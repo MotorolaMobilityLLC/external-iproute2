@@ -32,6 +32,7 @@ LOCAL_CFLAGS := \
     -Wno-unused-parameter \
     -Werror \
     -D_GNU_SOURCE \
+    -DNETNS_RUN_DIR=\"$(NETNS_RUN_DIR)\" \
     -DHAVE_SETNS \
 
 LOCAL_LDFLAGS := -Wl,-export-dynamic -Wl,--no-gc-sections
