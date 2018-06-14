@@ -262,11 +262,7 @@ int print_qdisc(const struct sockaddr_nl *who,
 	if (t->tcm_info != 1)
 		fprintf(fp, "refcnt %d ", t->tcm_info);
 
-	/* pfifo_fast is generic enough to warrant the hardcoding --JHS */
-	if (strcmp("pfifo_fast", RTA_DATA(tb[TCA_KIND])) == 0)
-		q = get_qdisc_kind("prio");
-	else
-		q = get_qdisc_kind(RTA_DATA(tb[TCA_KIND]));
+	q = get_qdisc_kind(RTA_DATA(tb[TCA_KIND]));
 
 	if (tb[TCA_OPTIONS]) {
 		if (q)
