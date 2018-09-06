@@ -31,6 +31,7 @@
 static struct action_util *action_list;
 #ifdef ANDROID
 extern struct action_util mirred_action_util;
+extern struct action_util skbedit_action_util;
 #endif
 
 #ifdef CONFIG_GACT
@@ -91,6 +92,8 @@ static struct action_util *get_action_kind(char *str)
 #ifdef ANDROID
 	if (!strcmp(str, "mirred")) {
 		return &mirred_action_util;
+	} else if (!strcmp(str, "skbedit")) {
+		return &skbedit_action_util;
 	} else {
 		fprintf(stderr, "Android does not support action '%s'", str);
 		return NULL;
