@@ -4,6 +4,7 @@ cc_binary {
 
     srcs: [
         "tc.c",
+        "q_multiq.c",
         "tc_exec.c",
         "tc_qdisc.c",
         "q_cbq.c",
@@ -11,6 +12,7 @@ cc_binary {
         "tc_class.c",
         "tc_core.c",
         "m_action.c",
+        "m_skbedit.c",
         "m_estimator.c",
         "tc_filter.c",
         "tc_monitor.c",
