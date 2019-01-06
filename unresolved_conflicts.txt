@@ -1,0 +1,5 @@
+# List of unresolved conflicts
+# Generated with `git ls-files --unmerged`
+
+100644 78463a86d9915915e7544ff381551168123be167 1	tc/Android.mk
+100644 6abee4ca34680c82416259c6975d9a9f36f5723e 2	tc/Android.mk
