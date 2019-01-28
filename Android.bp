@@ -43,5 +43,7 @@ cc_defaults {
         "-DHAVE_TYPE_SSIZE_T",
         "-DHAVE_UNISTD_H",
         "-DHAVE_UTIME_H",
+
+        "-DNO_SHARED_LIBS",
     ],
 }
