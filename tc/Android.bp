@@ -119,4 +119,8 @@ cc_binary {
 
     // This is a work around for b/18403920
     ldflags: ["-Wl,--no-gc-sections"],
+
+    sanitize: {
+        memtag_heap: true,
+    },
 }
