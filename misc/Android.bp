@@ -30,4 +30,8 @@ cc_binary {
     ],
 
     ldflags: ["-Wl,-export-dynamic"],
+
+    sanitize: {
+        memtag_heap: true,
+    },
 }
