@@ -114,4 +114,8 @@ cc_binary {
         "-Wl,-export-dynamic",
         "-Wl,--no-gc-sections",
     ],
+
+    sanitize: {
+        memtag_heap: true,
+    },
 }
