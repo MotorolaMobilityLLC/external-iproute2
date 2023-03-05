@@ -32,6 +32,14 @@ license {
 }
 
 genrule {
+    name: "static-syms.h",
+    out: ["static-syms.h"],
+    srcs: ["*.c"],
+    tool_files: ["make-static-syms.sh"],
+    cmd: "$(location make-static-syms.sh) $(in) > $(out)",
+}
+
+genrule {
     name: "emp_ematch.yacc.c",
     cmd: "$(location bison) -y --output=$(genDir)/emp_ematch.yacc.c $(in)",
     out: ["emp_ematch.yacc.c"],
@@ -51,7 +59,10 @@ cc_binary {
     name: "tc",
     defaults: ["iproute2_defaults"],
 
-    generated_headers: ["emp_ematch.yacc.h"],
+    generated_headers: [
+        "emp_ematch.yacc.h",
+        "static-syms.h",
+    ],
 
     // ordering affects link order, so cannot be quite fully sorted
     srcs: [
