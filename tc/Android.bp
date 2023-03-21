@@ -41,18 +41,24 @@ genrule {
 
 genrule {
     name: "emp_ematch.yacc.c",
-    cmd: "$(location bison) -y --output=$(genDir)/emp_ematch.yacc.c $(in)",
+    cmd: "M4=$(location m4) $(location bison) -y --output=$(genDir)/emp_ematch.yacc.c $(in)",
     out: ["emp_ematch.yacc.c"],
     srcs: ["emp_ematch.y"],
-    tools: ["bison"],
+    tools: [
+        "bison",
+        "m4",
+    ],
 }
 
 genrule {
     name: "emp_ematch.yacc.h",
-    cmd: "$(location bison) -y --defines=$(genDir)/emp_ematch.yacc.h --output=$(genDir)/emp_ematch.yacc.c $(in)",
+    cmd: "M4=$(location m4) $(location bison) -y --defines=$(genDir)/emp_ematch.yacc.h --output=$(genDir)/emp_ematch.yacc.c $(in)",
     out: ["emp_ematch.yacc.h"],
     srcs: ["emp_ematch.y"],
-    tools: ["bison"],
+    tools: [
+        "bison",
+        "m4",
+    ],
 }
 
 cc_binary {
